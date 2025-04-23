@@ -1,0 +1,30 @@
+name: Check code formatting
+
+on:
+  push:
+    branches:
+      - main  # Executar ao fazer push na branch main
+  pull_request:
+    branches:
+      - main  # Executar ao abrir PR para a branch main
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        pip install black
+
+    - name: Run Black
+      run: |
+        black --check .
