@@ -1,6 +1,10 @@
+import sys
+import os
 import json
-from lambda_function import lambda_handler
 import pytest
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from lambda_function import lambda_handler
+
 
 def test_lambda_success(monkeypatch):
     monkeypatch.setattr("random.randint", lambda a, b: 1)
