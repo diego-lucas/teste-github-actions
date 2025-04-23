@@ -21,7 +21,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Empacotar código
-        run: zip -r lambda_function.zip main.py
+        run: zip -r lambda_function.zip lambda_function.py
 
       - name: Fazer deploy no AWS Lambda
         run: |
