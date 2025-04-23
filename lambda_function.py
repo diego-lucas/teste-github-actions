@@ -7,4 +7,4 @@ def lambda_handler(event, context):
     if num == 5:
         return {"statusCode": 500, "body": json.dumps("Erro!")}
     else:
-        return {"statusCode": 200, "body": json.dumps("Sucesso!")}
+        return {"statusCode": 200, "body": json.dumps("Sucesso!!")}
